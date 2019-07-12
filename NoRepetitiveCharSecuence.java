@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
+
 
 //Given a string of letters from a to z write a function that test if
 //this string has state where a letter can not repetive more than one in secuence
@@ -19,12 +18,15 @@ public class NoRepetitiveCharSecuence {
 		//Lets create the map wehere each character are going to have its frecuency
 		HashMap<Character,Integer> map = new HashMap<>();
 		
+		//Variable to store the max frecuency of certain letter
 		Integer maxFrecuency = 0;
+		//Variable to store the letter of max frecuency
 		Character maxFrecuencyLetter = ' ';
 		
+		//char array to iterate through the string
 		char[] charArray = str.toCharArray();
 		
-		
+		//Fill the map with the frecuecies
 		for(char c : charArray) {
 			
 			if (!map.containsKey(c)) {
@@ -47,6 +49,7 @@ public class NoRepetitiveCharSecuence {
 		
 		ArrayList<LinkedList<Character>> list = new ArrayList<>();
 		
+		//Create a list of list with the letter with max frecuency
 		while(count > 0) {
 			LinkedList<Character> linkList = new LinkedList<Character>();
 			linkList.add(maxFrecuencyLetter);
@@ -58,7 +61,7 @@ public class NoRepetitiveCharSecuence {
 		map.put(maxFrecuencyLetter, 0);
 		
 		int countUp = 0;
-		
+		//Fill the list of list with the missing letters
 		for(Map.Entry<Character, Integer> entry : map.entrySet()) {
 			
 			count = entry.getValue();
@@ -77,7 +80,7 @@ public class NoRepetitiveCharSecuence {
 			}
 			
 		}
-		
+		//Iterate throgh th elist of list to check if the condition stays
 		char pastChar = ' ';
 		for(int i = 0;i < list.size();i++) {
 			
