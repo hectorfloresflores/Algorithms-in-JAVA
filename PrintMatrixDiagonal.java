@@ -1,3 +1,4 @@
+package com.hectorflores;
 /*Hi guys this is an implementation of printing a matrix in diagonal from right to left*/
 /*
 * Example this matrix {{1,2,3},{4,5,6},{7,8,9}}; will print in this order

@@ -1,4 +1,4 @@
-package com.leetcode.algorithms;
+package com.hectorflores;
 
 import java.util.ArrayList;
 import java.util.HashMap;

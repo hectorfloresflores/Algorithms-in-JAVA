@@ -1,4 +1,4 @@
-package com.leetcode.algorithms;
+package com.hectorflores;
 
 class ListNode {
 	int val;

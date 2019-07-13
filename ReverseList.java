@@ -1,4 +1,4 @@
-package com.leetcode.algorithms;
+package com.hectorflores;
 
 import java.util.Scanner;
 import java.util.Stack;
