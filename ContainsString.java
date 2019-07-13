@@ -1,5 +1,13 @@
 package com.hectorflores;
 
+
+/*
+ * This class has a method that return if string is a subtring of another
+ * The first string parameter is the string original
+ * and the second string parameter is the substring
+ * is the substring is greater than original string return false
+ * */
+
 public class ContainsString {
 
 	
