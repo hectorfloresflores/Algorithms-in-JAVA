@@ -12,16 +12,16 @@ public class BinaryTreeLevelOrderTraversal {
 		
 		List<List<Integer>> myList = new ArrayList<List<Integer>>();
 		
+		function(root, myList, 0);
 		
-		
-		return function(root, myList, 0);
+		return myList;
 	}
 	
-	public static List<List<Integer>> function(TreeNode root, List<List<Integer>> list, int level){
+	public static void function(TreeNode root, List<List<Integer>> list, int level){
 		
 		
 		if (root == null) {
-			return null;
+			return;
 		}else if (list.size() < level + 1) {
 			LinkedList<Integer> auxList = new LinkedList<>();
 			auxList.add(root.val);
@@ -33,7 +33,6 @@ public class BinaryTreeLevelOrderTraversal {
 		function(root.left, list, level + 1);
 		function(root.right, list, level + 1);
 		
-		return list;
 		
 	}
 	
