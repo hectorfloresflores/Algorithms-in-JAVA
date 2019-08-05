@@ -55,11 +55,11 @@ class Expression {
 		return expre;
 	}
 	
-	public static Expression sum(Expression a, Expression b) {
-		
-		
-		
-	}
+//	public static Expression sum(Expression a, Expression b) {
+//		
+//		
+//		
+//	}
 
 	public static String multiplyVariable(String a, String b) {
 		TreeMap<String, Integer> tree = new TreeMap<>();
@@ -126,7 +126,7 @@ public class BasicCalculatorIV {
 //		tree.put("a*b*c*c", 1);
 //		tree.put("a*a*b*c", 1);
 
-		System.out.println(Expression.multiplyVariable("b*a*c*a*a", "d*a*c*b*a"));
+		System.out.println(Expression.multiplyVariable("a*b*c", "4*a*b*c"));
 	}
 
 }
