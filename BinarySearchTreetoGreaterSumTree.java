@@ -38,7 +38,7 @@ public class BinarySearchTreetoGreaterSumTree {
 		node.left.right.right = new TreeNode(3);
 		
 		BinarySearchTreetoGreaterSumTree.binarySearchTreetoGreaterSumTree(node);
-int a = 0;
+
 	}
 
 }
