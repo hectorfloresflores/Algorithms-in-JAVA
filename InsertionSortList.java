@@ -46,7 +46,7 @@ public class InsertionSortList {
 		}
 		
 		auxVal = 0;
-		while(head.next != null) {
+		while(head != null) {
 			head.val = myList.get(auxVal);
 			head = head.next;
 			auxVal++;
