@@ -1,6 +1,6 @@
 package com.hectorflores;
 
-import java.util.Arrays;
+
 
 public class LargestPlusSign {
 
@@ -20,7 +20,7 @@ public class LargestPlusSign {
 		for (int i = 0; i < matrix.length; i++) {
 
 			for (int j = 0; j < matrix.length; j++) {
-				aux = getMaxZeros(matrix,i,j);
+				aux = getMaxZeros(matrix, i, j);
 				if (aux > maxOrder) {
 					maxOrder = aux;
 				}
@@ -34,41 +34,41 @@ public class LargestPlusSign {
 
 	public static int getMaxZeros(int[][] matrix, int i, int j) {
 		int order = 0;
-		int[] pointerLeft = {i,j};
-		int[] pointerUp = {i,j};
-		int[] pointerRight = {i,j};
-		int[] pointerDown = {i,j};
+		int[] pointerLeft = { i, j };
+		int[] pointerUp = { i, j };
+		int[] pointerRight = { i, j };
+		int[] pointerDown = { i, j };
 		if (matrix[i][j] != 0) {
 			return order;
-		}else {
+		} else {
 			order++;
-			
-			while(true) {
+
+			while (true) {
 				pointerLeft[1] = pointerLeft[1] - 1;
 				pointerUp[0] = pointerUp[0] - 1;
 				pointerRight[1] = pointerRight[1] + 1;
 				pointerDown[0] = pointerDown[0] + 1;
-				if ((pointerLeft[1] >= 0 && pointerLeft[1] < matrix.length && matrix[i][pointerLeft[1]] == 0) 
-				&& (pointerUp[0] >= 0 && pointerUp[0] < matrix.length && matrix[pointerUp[0]][j] == 0)
-				&& (pointerRight[1] >= 0 && pointerRight[1] < matrix.length && matrix[i][pointerRight[1]] == 0) 
-				&& (pointerDown[0] >= 0 && pointerDown[0] < matrix.length && matrix[pointerDown[0]][j] == 0)) {
-					
-						order++;
-		
-				}else {
+				if ((pointerLeft[1] >= 0 && pointerLeft[1] < matrix.length && matrix[i][pointerLeft[1]] == 0)
+						&& (pointerUp[0] >= 0 && pointerUp[0] < matrix.length && matrix[pointerUp[0]][j] == 0)
+						&& (pointerRight[1] >= 0 && pointerRight[1] < matrix.length && matrix[i][pointerRight[1]] == 0)
+						&& (pointerDown[0] >= 0 && pointerDown[0] < matrix.length && matrix[pointerDown[0]][j] == 0)) {
+
+					order++;
+
+				} else {
 					break;
 				}
-				
+
 			}
-			
+
 		}
 
-	return order;
-		
+		return order;
+
 	}
 
 	public static void main(String[] args) {
-		int[][] matrix = {{}};
+		int[][] matrix = { {} };
 		System.out.println(orderOfLargestPlusSign(2, matrix));
 
 	}
