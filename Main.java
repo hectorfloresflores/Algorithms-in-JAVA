@@ -8,7 +8,7 @@ public class Main {
 		String s1 = new String(s);
 		System.out.println(s.equals(s));
 		
-		System.out.println(s.hashCode());
+		System.out.println("jajajaja");
 	}
 
 }
