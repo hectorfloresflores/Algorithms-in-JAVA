@@ -1,5 +1,7 @@
 package com.leetcode;
 
+import java.util.stream.IntStream;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -36,7 +38,10 @@ public class FindBottomLeftTreeValue {
     }
 
     public static void main(String[] args) {
-
+        IntStream.iterate(1, n -> n + 1)
+            .skip(Integer.parseInt("8"))
+            .limit(Integer.parseInt("8"))
+            .forEach(System.out::println);
     }
 }
 
