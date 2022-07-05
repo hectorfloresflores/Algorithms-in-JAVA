@@ -14,10 +14,13 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 class Hola {
@@ -58,21 +61,35 @@ class Hola {
     }
      static String name1 = "hell";
         }
+
+class Square {
+    private double length;
+    public Square(double length) {
+        this.length = length;
+    }
+    public double findSurfaceArea(){
+        return length*length;
+    }
+}
+
+class Cube extends Square {
+    public Cube(double length) {
+        super(length);
+    }
+    public double findSurfaceArea() {
+        return super.findSurfaceArea() * 6;
+    }
+}
 public class Main {
       static String name = "hell";
-
         String ll;
 
       public static void main(String[] args) throws Exception {
-          //String s = Hola.PE_PARAM.CREATE_PRIVATE_ENDPOINT.name().split("_", 2)[1];
-          System.out.println(Hola.getActionStep(Hola.PE_PARAM.CREATE_PRIVATE_ENDPOINT));
-          System.out.println(Hola.getActionStep(Hola.PE_PARAM.CREATE_RCE));
-          System.out.println(Hola.getActionStep(Hola.PE_PARAM.CREATE_SCAN_PROXY));
-          System.out.println(Hola.getActionStep(Hola.PE_PARAM.DELETE_PRIVATE_ENDPOINT));
-          System.out.println(Hola.getActionStep(Hola.PE_PARAM.DELETE_RCE));
-          System.out.println(Hola.getActionStep(Hola.PE_PARAM.DELETE_SCAN_PROXY));
-          System.out.println(Hola.getActionStep(null));
-
+          List<Integer> Arraylist = new ArrayList<>();
+          List<Integer> linkedlist = new LinkedList<>();
+          //Generate 10 random value from 30 to 50
+          Square shape = new Cube(1);
+          System.out.println(shape.findSurfaceArea());
 
 
 

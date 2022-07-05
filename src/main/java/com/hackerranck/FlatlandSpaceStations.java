@@ -6,6 +6,7 @@ import java.util.Collections;
 public class FlatlandSpaceStations {
 
     static int flatlandSpaceStations(int n, int[] c) {
+        Arrays.sort(c);
         int[] ordered = Arrays.stream(c).sorted().toArray();
         //This means
         int max = 0;
@@ -15,12 +16,14 @@ public class FlatlandSpaceStations {
                 max = (int)diff;
             }
         }
+        //caso de la derecha
         if (n != ordered[ordered.length-1] - 1) {
             int diff = n - ordered[ordered.length-1] - 1;
             if (diff > max) {
                 max = diff;
             }
         }
+        //
         if (ordered[0] != 0 && ordered[0] > max) {
            max = ordered[0];
         }
