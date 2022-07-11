@@ -81,7 +81,6 @@ class Cube extends Square {
     }
 }
 public class Main {
-      static String name = "hell";
         String ll;
 
       public static void main(String[] args) throws Exception {
