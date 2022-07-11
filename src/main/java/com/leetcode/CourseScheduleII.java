@@ -1,19 +1,14 @@
 package com.leetcode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
-import java.util.Set;
 
-public class CourseSchedule {
+public class CourseScheduleII {
     Queue<Integer> queue = new LinkedList<>();
     boolean[] cycle = new boolean[1];
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
+    public int[] canFinish(int numCourses, int[][] prerequisites) {
 
         List<List<Integer>> graph = new ArrayList<>();
         for (int i = 0; i < numCourses; i++) {
@@ -36,13 +31,13 @@ public class CourseSchedule {
             break;
         }
         //If there it is a cycle return false because it can not be possible
-        return !cycle[0];
+        return cycle[0] ? new int[0] : queue.stream().mapToInt(Integer::intValue).toArray();
     }
 
     void dfs(List<List<Integer>> graph, int row, boolean[] visited, boolean[] cache) {
         if (cycle[0] || visited[row]){
             cycle[0] = true;
-        return;
+            return;
 
         }
         if (cache[row]) {
@@ -51,7 +46,7 @@ public class CourseSchedule {
 
         visited[row] = true;
         for (Integer depend : graph.get(row)) {
-           // visited[row] = true;
+            // visited[row] = true;
             System.out.println("row " + row + "col " + depend);
             //visited[row] = false;
             dfs(graph, depend, visited, cache);
@@ -61,9 +56,10 @@ public class CourseSchedule {
         visited[row] = false;
     }
 
+
     public static void main(String[] args) {
-        CourseSchedule c = new CourseSchedule();
-        System.out.println(c.canFinish(2, new int[][]{{1,0},{0,1}}
-           ));
+        CourseScheduleII c = new CourseScheduleII();
+        System.out.println(c.canFinish(4, new int[][]{{1,0},{2,0},{3,1},{3,2}}
+        ));
     }
 }
